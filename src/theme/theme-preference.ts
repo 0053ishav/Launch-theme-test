@@ -11,3 +11,4 @@ export function resolveThemePreference(
 ): ResolvedTheme {
   return preference === "system" ? systemTheme : preference;
 }
+
