@@ -9,7 +9,7 @@
     "prebuild:android": "expo prebuild --platform android",
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "test": "node scripts/test-theme-resolution.mjs",
+    "test": "node scripts/test-theme-resolution.mjs && node scripts/check-project-config.mjs",
     "test:matrix": "node scripts/test-theme-resolution.mjs"
   },
   "dependencies": {
