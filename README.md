@@ -13,7 +13,7 @@ The baseline uses Expo's native splash resources and a persisted app preference.
 
 ## Run
 
-Requirements: Node.js 20+, Android SDK/Android Studio, and an Android device or emulator.
+Requirements: Node.js 22.13+, Android SDK/Android Studio, and an Android device or emulator.
 
 ```bash
 npm install
@@ -52,9 +52,7 @@ The candidate's README states compiled launch assets remain the first OS-rendere
 
 ## Checks
 
-`npm test` runs dependency-free checks for the four preference combinations and validates the Expo app/splash configuration. `npm run typecheck` is intended to run TypeScript after dependencies have been installed.
-
-These checks have been committed but have **not been executed in a local Node/Android environment in this session**. Device-level cold-start behavior also remains unverified.
+`npm test`, `npm run typecheck`, and `npm run lint` pass in [GitHub Actions](https://github.com/0053ishav/Launch-theme-test/actions). The CI install generates and commits the npm lockfile when dependencies change. The native cold-start matrix has **not yet been run on a physical Android device or emulator**; that is the next validation step.
 
 ## References
 
