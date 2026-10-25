@@ -22,18 +22,14 @@ export default function RootLayout() {
     const unsubscribe = useThemeStore.persist.onFinishHydration(() => {
       setHydrated(true);
     });
-
     if (useThemeStore.persist.hasHydrated()) {
       setHydrated(true);
     }
-
     return unsubscribe;
   }, []);
 
   useEffect(() => {
-    if (hydrated) {
-      void SplashScreen.hideAsync();
-    }
+    if (hydrated) void SplashScreen.hideAsync();
   }, [hydrated]);
 
   return (
