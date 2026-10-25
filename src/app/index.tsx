@@ -120,7 +120,7 @@ export default function HomeScreen() {
         </View>
 
         <Text style={[styles.footer, { color: colors.muted }]}>
-          Baseline first: this app intentionally starts with Expo's native splash. We will compare it with the candidate library in a separate step.
+          Baseline first: this app intentionally starts with Expo&apos;s native splash. We will compare it with the candidate library in a separate step.
         </Text>
       </ScrollView>
     </SafeAreaView>
