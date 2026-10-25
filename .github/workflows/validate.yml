@@ -1,0 +1,32 @@
+name: Validate theme spike
+
+on:
+  push:
+    branches:
+      - spike/theme-preference-test
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies and refresh lockfile
+        run: npm install
+      - name: Test theme preference matrix and config
+        run: npm test
+      - name: Type-check
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
