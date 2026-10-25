@@ -27,7 +27,6 @@ const COLORS = {
     border: "#D9E1EC",
     accent: "#2457D6",
     accentText: "#FFFFFF",
-    success: "#146C43",
   },
   dark: {
     background: "#101827",
@@ -37,7 +36,6 @@ const COLORS = {
     border: "#34445D",
     accent: "#90B4FF",
     accentText: "#10203F",
-    success: "#83D9AC",
   },
 } as const;
 
