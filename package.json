@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "node scripts/test-theme-resolution.mjs && node scripts/check-project-config.mjs",
-    "test:matrix": "node scripts/test-theme-resolution.mjs"
+    "test:matrix": "node scripts/test-theme-resolution.mjs",
+    "prebuild": "expo prebuild"
   },
   "dependencies": {
     "expo": "~58.0.19",
