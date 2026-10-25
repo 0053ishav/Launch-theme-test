@@ -1,43 +1,39 @@
 {
-  "name": "clash-one-test",
+  "name": "launch-theme-test",
   "version": "1.0.0",
+  "private": true,
   "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "prebuild:android": "expo prebuild --platform android",
+    "lint": "expo lint",
+    "typecheck": "tsc --noEmit",
+    "test": "jest"
+  },
   "dependencies": {
-    "@expo/ui": "~58.0.23",
+    "@expo/vector-icons": "^15.0.3",
     "expo": "~58.0.19",
-    "expo-constants": "~58.0.13",
-    "expo-device": "~58.0.5",
-    "expo-font": "~58.0.10",
-    "expo-glass-effect": "~58.0.5",
-    "expo-image": "~58.0.17",
-    "expo-linking": "~58.0.14",
     "expo-router": "~58.0.26",
     "expo-splash-screen": "~58.0.11",
     "expo-status-bar": "~58.0.4",
-    "expo-symbols": "~58.0.4",
-    "expo-system-ui": "~58.0.6",
-    "expo-web-browser": "~58.0.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0",
     "react-native": "0.88.0",
-    "react-native-gesture-handler": "~3.3.0",
-    "react-native-reanimated": "4.7.1",
+    "react-native-mmkv": "^4.1.2",
+    "react-native-nitro-modules": "^0.36.0",
     "react-native-safe-area-context": "~5.10.1",
     "react-native-screens": "~4.30.0",
-    "react-native-web": "~0.21.4",
-    "react-native-worklets": "0.13.0"
+    "react-native-reanimated": "4.7.1",
+    "react-native-worklets": "0.13.0",
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.14",
     "@types/react": "~19.3.0",
+    "eslint": "^9.25.0",
+    "eslint-config-expo": "~10.0.0",
+    "jest": "~29.7.0",
+    "jest-expo": "~58.0.0",
     "typescript": "~6.0.3"
-  },
-  "scripts": {
-    "start": "expo start",
-    "reset-project": "node ./scripts/reset-project.js",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "lint": "expo lint"
-  },
-  "private": true
+  }
 }
