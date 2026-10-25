@@ -1,10 +1,10 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
-import { MMKV } from "react-native-mmkv";
+import { createMMKV } from "react-native-mmkv";
 
 import type { ThemePreference } from "./theme-preference";
 
-const storage = new MMKV({ id: "launch-theme-test" });
+const storage = createMMKV({ id: "launch-theme-test" });
 
 const zustandStorage = {
   getItem: (name: string): string | null => storage.getString(name) ?? null,
