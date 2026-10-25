@@ -2,13 +2,18 @@ export type ThemePreference = "light" | "dark" | "system";
 export type ResolvedTheme = "light" | "dark";
 
 /**
- * Resolves the app's explicit preference independently of the OS splash screen.
- * Keep this pure so the preference matrix can be tested without React Native.
+ * Resolve an app-level preference independently from native launch rendering.
  */
 export function resolveThemePreference(
   preference: ThemePreference,
   systemTheme: ResolvedTheme,
 ): ResolvedTheme {
-  return preference === "system" ? systemTheme : preference;
+  switch (preference) {
+    case "light":
+      return "light";
+    case "dark":
+      return "dark";
+    case "system":
+      return systemTheme;
+  }
 }
-
