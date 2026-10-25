@@ -1,7 +1,7 @@
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useColorScheme } from "react-native";
 
 import { resolveThemePreference } from "@/theme/theme-preference";
@@ -12,11 +12,23 @@ void SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const systemColorScheme = useColorScheme();
   const preference = useThemeStore((state) => state.preference);
-  const hydrated = useThemeStore.persist.hasHydrated();
+  const [hydrated, setHydrated] = useState(() => useThemeStore.persist.hasHydrated());
   const resolvedTheme = resolveThemePreference(
     preference,
     systemColorScheme === "dark" ? "dark" : "light",
   );
+
+  useEffect(() => {
+    const unsubscribe = useThemeStore.persist.onFinishHydration(() => {
+      setHydrated(true);
+    });
+
+    if (useThemeStore.persist.hasHydrated()) {
+      setHydrated(true);
+    }
+
+    return unsubscribe;
+  }, []);
 
   useEffect(() => {
     if (hydrated) {
