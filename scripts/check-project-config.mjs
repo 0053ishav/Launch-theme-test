@@ -8,7 +8,7 @@ assert.equal(app.slug, "launch-theme-test");
 assert.equal(app.userInterfaceStyle, "automatic");
 assert.equal(app.android.package, "com.strngelabs.launchthemetest");
 assert.equal(pkg.name, "launch-theme-test");
-assert.match(pkg.dependencies.expo, /^~58\\./);
+assert.match(pkg.dependencies.expo, /^~58\./);
 assert.ok(pkg.dependencies["expo-splash-screen"]);
 assert.ok(pkg.dependencies["react-native-mmkv"]);
 assert.ok(pkg.dependencies["react-native-nitro-modules"]);
